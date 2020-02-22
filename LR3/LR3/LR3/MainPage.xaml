@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LR3"
+             x:Class="LR3.MainPage"
+             Title="Метрики сложности потока данных">
+
+    <ScrollView Orientation="Both">
+        <StackLayout x:Name="MainStack" Orientation="Horizontal">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Код программы" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
+                <Editor x:Name="CodeEditor" HeightRequest="700" WidthRequest="600" IsSpellCheckEnabled="False"/>
+                <Button x:Name="ScanerButton" Text="Посчитать спен программы и метрики Чепина" FontSize="20" HorizontalOptions="Center" Clicked="ScanerButton_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Анализ сложности потока данных" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal">
+                    <Grid x:Name="SpenGrid" CascadeInputTransparent="True" ColumnSpacing="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Grid x:Name="ChepinGrid" CascadeInputTransparent="True" ColumnSpacing="20" IsVisible="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="170"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Полная метрика Чепина" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="4"/>
+                        <Label Text="Метрика Чепина ввода/вывода" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="Center" Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4"/>
+                        <Label Text="Группа переменных" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                        <Label Text="P" HorizontalOptions="Center" Grid.Row="1" Grid.Column="1"/>
+                        <Label Text="M" HorizontalOptions="Center" Grid.Row="1" Grid.Column="2"/>
+                        <Label Text="C" HorizontalOptions="Center" Grid.Row="1" Grid.Column="3"/>
+                        <Label Text="T" HorizontalOptions="Center" Grid.Row="1" Grid.Column="4"/>
+                        <Label Text="Переменные, относящиеся к группе " FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                        <Label Text="P" HorizontalOptions="Center" Grid.Row="1" Grid.Column="5"/>
+                        <Label Text="M" HorizontalOptions="Center" Grid.Row="1" Grid.Column="6"/>
+                        <Label Text="C" HorizontalOptions="Center" Grid.Row="1" Grid.Column="7"/>
+                        <Label Text="T" HorizontalOptions="Center" Grid.Row="1" Grid.Column="8"/>
+                        <Label Text="Количество переменных в группе " FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                        <Label Text="Метрика Чепина" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>

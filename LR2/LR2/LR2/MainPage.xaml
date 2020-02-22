@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LR2"
+             x:Class="LR2.MainPage"
+             Title="Метрики Холстеда">
+
+    <ScrollView>
+        <StackLayout x:Name="MainStack" Orientation="Horizontal">
+            <StackLayout Orientation="Vertical">
+                <Label Text="Код программы" HorizontalOptions="Center" FontSize="25"/>
+                <Editor x:Name="CodeEditor" HeightRequest="700" WidthRequest="600" IsSpellCheckEnabled="False"/>
+                <Button x:Name="ScanerButton" Text="Посчитать метрики Джилба" FontSize="20" HorizontalOptions="Center" Clicked="ScanerButton_Clicked"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Анализ размера программы" HorizontalOptions="Center" FontSize="25"/>
+                <Grid x:Name="MainGrid" CascadeInputTransparent="True" ColumnSpacing="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="170"/>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="100"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <Label x:Name="NumberOfConditionalStatementsLabel" FontSize="25"/>
+                <Label x:Name="SaturationOfConditionalStatementsLabel" FontSize="25"/>
+                <Label x:Name="MaximumNestingLevelOfConditionalOperatorLable" FontSize="25"/>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
